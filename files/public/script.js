@@ -1,6 +1,8 @@
 const tmdbKey = '908b84de69d3d9b47d16b0f4d4424744';
 const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
+const likesArr = []
+const dislikesArr = []
 
 const getGenres = async () => {
   const genreRequestEndpoint = '/genre/movie/list'
@@ -73,6 +75,7 @@ const showRandomMovie = async () => {
   const randomMovie = getRandomMovie(movies)
   const info = await getMovieInfo(randomMovie)
   displayMovie(info)
+  
 
 };
 

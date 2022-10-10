@@ -30,14 +30,37 @@ const clearCurrentMovie = () => {
     movieTextDiv.innerHTML = '';
 }
 
+const likeOrDislike = () => { 
+    const title = document.getElementById('movieTitle').innerHTML;
+    const ele = document.createElement('h2');
+    ele.innerHTML = title;
+    return ele;
+}
+
 // After liking a movie, clears the current movie from the screen and gets another random movie
 const likeMovie = () => {
+    const likes = document.getElementById('likes')
+
+    const movie = document.getElementById('movieTitle').innerHTML
+    if((likesArr.includes(movie) == false) && (dislikesArr.includes(movie) == false)){
+        likesArr.push(movie);
+        likes.appendChild(likeOrDislike())
+    }
+
     clearCurrentMovie();
     showRandomMovie();
 };
 
 // After disliking a movie, clears the current movie from the screen and gets another random movie
 const dislikeMovie = () => {
+    const dislikes = document.getElementById('dislikes')
+
+    const movie = document.getElementById('movieTitle').innerHTML
+    if((dislikesArr.includes(movie) == false) && (likesArr.includes(movie) == false)){
+        dislikesArr.push(movie);
+        dislikes.appendChild(likeOrDislike())
+    }
+
     clearCurrentMovie();
     showRandomMovie();
 };

@@ -18,7 +18,19 @@ body {
     font-family: 'Fredoka One', sans-serif;
 }
 
-#movieInfo {
+#likesAndDislikes {
+    color: rgb(254,252,234);
+    font-family: Questrial;
+    text-align: center;
+}
+
+.likeDislikeHeader {
+    color: black;
+}
+
+
+
+#movieInfo, #likesAndDislikes{
     width:  65%;
     margin:  32px auto;
 }
@@ -29,7 +41,7 @@ body {
     clear:  both;
 }
 
-#moviePoster, #movieText {
+#moviePoster, #movieText, #likes, #dislikes {
     width:  50%;
     float:  left;
 }
