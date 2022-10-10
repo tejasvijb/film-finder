@@ -62,6 +62,24 @@ const createMovieTitle = (title) => {
     return titleHeader;
 };
 
+// Create HTML for movie text
+const createMovieTagline = (tagline) => {
+    const taglineHeader = document.createElement('h2');
+    taglineHeader.setAttribute('id','movieTagline');
+    taglineHeader.innerHTML = tagline;
+  
+    return taglineHeader;
+}
+
+// Create HTML for movie release date
+const createMovieReleaseDate = (releaseDate) => {
+    const releaseDateHeader = document.createElement('p');
+    releaseDateHeader.setAttribute('id','movieReleaseDate');
+    releaseDateHeader.innerHTML = releaseDate;
+  
+    return releaseDateHeader;
+}
+
 // Create HTML for movie overview
 const createMovieOverview = (overview) => {
     const overviewParagraph = document.createElement('p');
@@ -88,11 +106,15 @@ const displayMovie = (movieInfo) => {
     // Create HTML content containing movie info
     const moviePoster = createMoviePoster(movieInfo.poster_path);
     const titleHeader = createMovieTitle(movieInfo.title);
+    const tagline = createMovieTagline(movieInfo.tagline)
+    const releaseDate = createMovieReleaseDate(movieInfo.release_date);
     const overviewText = createMovieOverview(movieInfo.overview);
   
     // Append title, poster, and overview to page
     moviePosterDiv.appendChild(moviePoster);
     movieTextDiv.appendChild(titleHeader);
+    movieTextDiv.appendChild(tagline);
+    movieTextDiv.appendChild(releaseDate);
     movieTextDiv.appendChild(overviewText);
   
     showBtns();
