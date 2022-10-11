@@ -10,6 +10,11 @@ const populateGenreDropdown = (genres) => {
     }
 };
 
+// Get a random number between 1 to 500
+const getRandomNum = (num) => {
+    return Math.floor(Math.random() * num + 1);
+ }
+
 // Returns the current genre selection from the dropdown menu
 const getSelectedGenre = () => {
     const selectedGenre = document.getElementById('genres').value;
