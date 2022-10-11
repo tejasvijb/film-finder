@@ -28,8 +28,6 @@ body {
     color: black;
 }
 
-
-
 #movieInfo, #likesAndDislikes{
     width:  65%;
     margin:  32px auto;
@@ -45,6 +43,24 @@ body {
     width:  50%;
     float:  left;
 }
+
+@media only screen and (max-width: 768px) {
+    #movieInfo {
+        display: flex;
+        flex-direction: column;
+    }
+    #movieInfo, #likesAndDislikes {
+        width: 100%;
+    }
+    #moviePoster, #movieText {
+        width: 100%;
+    }
+
+    #appTitle {
+        font-size: 3rem;
+    }
+}
+
 
 img#moviePoster {
     width:  100%;
